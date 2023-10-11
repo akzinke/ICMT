@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+
+         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin=""/>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+           crossorigin=""></script>
+
+    </head>
+
+    <body>
+        <div id="map" style="height: 1000px"></div>
+
+        <script type="text/javascript">
+
+          var map = L.map('map', {
+              center: [41.97947856, -87.7188093539],
+              zoom: 17
+          });
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+               maxZoom: 20,
+               minZoom: 4
+            }).addTo(map);
+
+
+   var heartIcon = L.icon({
+              iconUrl: 'heart.png', // url that links to the icon image file
+              iconSize:     [30, 30], // size of the icon image in pixels
+              iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+              popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+          });
+
+
+
+
+          var marker1 = L.marker([41.9805090935217, -87.71697333317817], {icon: heartIcon}).addTo(map);
+          var marker2 = L.marker([41.980425579038815, -87.71919893492701], {icon: heartIcon}).addTo(map);
+          var marker3 = L.marker([41.981242858068605, -87.71934898625669], {icon: heartIcon}).addTo(map);
+          var marker4 = L.marker([41.9777682626108, -87.71747603862185], {icon: heartIcon}).addTo(map);
+          var marker5 = L.marker([41.9803973596067, -87.72042962460444], {icon: heartIcon}).addTo(map);
+
+
+
+       
+
+var pic1 = '<img src="https://fastly.4sqi.net/img/general/600x600/33727649_Q4yTtK6WiVS5a1valLmhuUxRpVV3g6jsvBfeWBjPctY.jpg" alt="BBH" width="300">';
+var pic2 = '<img src="https://fastly.4sqi.net/img/general/600x600/X30C1FGHJUXCNPOUEP4SJ23EBEO0GEH41L5KZJHUKNOP1UB4.jpg" alt="FSU" width="300">';
+var pic3 = '<img src="https://www.neiu.edu/sites/neiu.edu/files/brand/body-images/neiu-campus-wallpaper.jpg" alt="FSU" width="300">';
+var pic4 = '<img src="https://4.bp.blogspot.com/-rTHIkj3R7hk/T4XtXjosVGI/AAAAAAAAHVw/pXD6f1mUnMI/s400/P1030908.JPG" alt="FSU" width="300">';
+var pic5 = '<img src="https://neiuindependent.org/wp-content/uploads/2015/09/WebReady1-900x675.jpg" alt="FSU" width="300">';
+
+marker1.bindPopup( 'Bernard Brommel Hall' + '<br>' + 'Bernard Brommel Hall is the location of most GIS and GES classes. Math and science classes and reseach labs are also located in this building'  + '<br>' + pic1);
+marker2.bindPopup('Library'+'<br>'+'The library offers a variety of resroucres for students. Computers and color printing are avaliable. On the fourth floor is the Student Success Center. Here tutors are avaliable for a variety of subjects, including GIS.' + '<br>' + pic2);
+marker3.bindPopup('Student Union' + '<br>' + 'The Student Union is the center of the Northeastern Campus. There are a variety of areas for students to study to and congregate. The lunchroom and coffee shop are also located here.'+'<br>'+ pic3);
+marker4.bindPopup('Physical Education Complex'+'<br>'+'The Physical Education Complex offers a variety of acitivites for NEIU students.  It has a running track, exercise machines, basketball courts, and a rock climbing wall. Classes such as dance and yoga and are offered routinely for students.' + pic4);
+marker5.bindPopup('Parking Garage'+'<br>'+ 'Many students utilize the parking garage and adjacent parking lots. A permit is required, which can be purchased when registering. Street parking may also be avaliable surronding the campus.' + pic5);
+
+
+
+
+        </script>
+   </body>
+</html>
